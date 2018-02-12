@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-	<div class="row">
-		<div class="container">
+	<div class="container">
+		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h1>Adds List <a href="{{url('adds/create')}}" class="btn btn-primary pull-right">Create</a></h1>
@@ -27,12 +27,21 @@
 								<td>{{$add->id}}</td>
 								<td>{{$add->name}}</td>
 								<td>{{$add->description}}</td>
-								<td>{{$add->phone}}</td>
-								<td>{{$add->category}}</td>
-								<td>{{$add->city}}</td>
-								<td>{{$add->zip}}</td>
-								<td>{{$add->type}}</td>
-								<td>{{$add->country}}</td>
+								<td><img src="{{$add->image}}" width="100" alt="{{$add->name}}"></td>
+								<td>{{$add->add_category->name}}</td>
+								<td>{{$add->user->name}}</td>
+								<td>{{$add->created_at}}</td>
+								@if($add->type == false)
+								<td>Pending</td>
+								@else
+								<td>Published</td>
+								@endif
+								<td>@if($add->type == false)
+									<a href="{{route('add.publish', $add->id)}}" class="btn btn-primary">Publish</a>
+									@else
+									<a href="{{route('add.unpublish', $add->id)}}" class="btn btn-primary">Unpublish</a>
+									@endif
+								</td>
 							</tr>
 							@endforeach
 						</tbody>

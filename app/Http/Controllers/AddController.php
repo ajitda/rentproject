@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Add;
 use App\AddCatagory;
+use Illuminate\Support\Facades\Auth;
 
 class AddController extends Controller
 {
@@ -38,9 +39,42 @@ class AddController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        if($input['image']){
+            $input['image'] = $this->upload($input['image']);
+        }else{
+            $input['image'] = 'images/adds/default.jpg';
+        }
+        $input['user_id']=Auth::user()->id;
+        Add::create($input);
+        return redirect('adds');
     }
 
+    public function upload($file)
+    {
+        $extension = $file->getClientOriginalExtension();
+        $sha = sha1($file->getClientOriginalName());
+        $filename = date('Y-m-d-h-i-s')."-".$sha.".".$extension;
+        $path = 'images/adds/';
+        $file->move($path, $filename);
+        return 'images/adds/'.$filename;
+    }
+
+    public function publish($id)
+    {
+        $add = Add::findOrFail($id);
+        $add->type = '1';
+        $add->update();
+        return redirect()->back();
+    }
+
+    public function unpublish($id)
+    {
+        $add = Add::findOrFail($id);
+        $add->type = '0';
+        $add->update();
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *

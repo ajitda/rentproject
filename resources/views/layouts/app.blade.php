@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -35,13 +35,14 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
+                    @if(Auth::check())
                     <ul class="nav navbar-nav">
                         <li><a href="{{route('aboutroute')}}">About</a></li>
                         <li><a href="{{url('hosts')}}">Hosts</a></li>
                         <li><a href="{{url('addcategory')}}">Add Category</a></li>
                         <li><a href="{{url('adds')}}">All Adds</a></li>
                     </ul>
-
+                    @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

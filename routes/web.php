@@ -30,3 +30,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/hosts', 'HostController');
 Route::resource('/addcategory', 'AddCategoryController');
 Route::resource('/adds', 'AddController');
+
+Route::get('/add/publish/{add}', [
+	'uses' => 'AddController@publish',
+	'as' => 'add.publish'
+]);
+Route::get('/add/unpublish/{add}', [
+	'uses' => 'AddController@unpublish',
+	'as' => 'add.unpublish'
+]);

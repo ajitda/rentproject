@@ -15,20 +15,10 @@
                     @endif
 
                     <div class="row">
-                        <div class="col-sm-2 well"><a href="{{url('booking')}}">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Ticketing</a></div>
-                        <div class="col-sm-2 well"><a href="#">Buying</a></div>
-                        <div class="col-sm-2 well"><a href="#">Selling</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
-                        <div class="col-sm-2 well"><a href="#">Booking</a></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4 well"><a href="">Your Profile</a></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4 well"><a href="#">Your Adds</a></div>
                     </div>
                 </div>
             </div>
