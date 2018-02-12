@@ -35,13 +35,16 @@
 								<td>Pending</td>
 								@else
 								<td>Published</td>
+
 								@endif
+								@if(Auth::user()->hasRole("admin"))
 								<td>@if($add->type == false)
 									<a href="{{route('add.publish', $add->id)}}" class="btn btn-primary">Publish</a>
 									@else
 									<a href="{{route('add.unpublish', $add->id)}}" class="btn btn-primary">Unpublish</a>
 									@endif
 								</td>
+								@endif
 							</tr>
 							@endforeach
 						</tbody>

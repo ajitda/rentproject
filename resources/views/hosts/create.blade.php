@@ -5,7 +5,7 @@
 			<div class="col-sm-8 col-sm-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h1>Creat Host <a href="{{url('hosts')}}" class="btn btn-primary pull-right">Back</a></h1>
+						<h1>User Registration <a href="{{url('hosts')}}" class="btn btn-primary pull-right">Back</a></h1>
 					</div>
 					<div class="panel-body">
 						<!-- @if(count($errors->all()) > 0)

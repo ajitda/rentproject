@@ -34,7 +34,7 @@ Route::resource('/adds', 'AddController');
 Route::get('/add/publish/{add}', [
 	'uses' => 'AddController@publish',
 	'as' => 'add.publish'
-]);
+])->middleware('admin');
 Route::get('/add/unpublish/{add}', [
 	'uses' => 'AddController@unpublish',
 	'as' => 'add.unpublish'
