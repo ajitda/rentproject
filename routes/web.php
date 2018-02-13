@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontController@index');
 
-Route::get('/booking', function () {
-    return view('booking.index');
-});
+
 
 Route::get('/abouturl', function () {
     return view('about');

@@ -18,7 +18,7 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4 well"><a href="">Your Profile</a></div>
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-4 well"><a href="#">Your Adds</a></div>
+                        <div class="col-sm-4 well"><a href="{{route('adds.create')}}">Create Your Adds</a></div>
                     </div>
                 </div>
             </div>

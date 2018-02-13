@@ -37,7 +37,7 @@ class HostController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        /*$this->validate($request, [
             'name' => 'required|string',
             'email' => 'required|unique:host|email',
             'phone' => 'required|integer',
@@ -47,7 +47,7 @@ class HostController extends Controller
             'zip'=> 'required|min:4|max:6',
             'country' => 'required|integer',
             'password' => 'required|min:6|max:8'             
-        ]);
+        ]);*/
         $input = $request->all();
         $host = Host::create($input);
         User::create([
@@ -57,7 +57,7 @@ class HostController extends Controller
             'user_type_id' =>$host->id,
             'user_type' => 'host'
         ]);
-        return redirect('hosts');
+        return redirect('/home');
     }
 
     /**

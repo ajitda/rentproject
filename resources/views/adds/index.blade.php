@@ -29,7 +29,7 @@
 								<td>{{$add->description}}</td>
 								<td><img src="{{$add->image}}" width="100" alt="{{$add->name}}"></td>
 								<td>{{$add->add_category->name}}</td>
-								<td>{{$add->user->name}}</td>
+								<td>{{$add->host->name}}</td>
 								<td>{{$add->created_at}}</td>
 								@if($add->type == false)
 								<td>Pending</td>

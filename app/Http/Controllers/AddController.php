@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Auth;
 class AddController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -45,7 +54,7 @@ class AddController extends Controller
         }else{
             $input['image'] = 'images/adds/default.jpg';
         }
-        $input['user_id']=Auth::user()->id;
+        $input['host_id']=Auth::user()->user_type_id;
         Add::create($input);
         return redirect('adds');
     }

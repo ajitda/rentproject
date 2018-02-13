@@ -20,8 +20,8 @@ class CreateAddsTable extends Migration
             $table->string('image');
             $table->boolean('type')->default(0);
             $table->integer('price');   
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('host_id')->unsigned();
+            $table->foreign('host_id')->references('id')->on('hosts');
 
             $table->integer('add_category_id')->unsigned();
             $table->foreign('add_category_id')->references('id')->on('add_catagories');

@@ -31,6 +31,10 @@ class User extends Authenticatable
     {
         return $this->morphTo();
     }
+    public function host()
+    {
+        return $this->belongsTo('App\Host');
+    }
     public function hasRole($user_type = null)
     {
         if($user_type){

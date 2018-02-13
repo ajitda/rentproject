@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'বাসা ভাড়া') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -29,20 +29,25 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'TO-LET') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    @if(Auth::check())
+                   
                     <ul class="nav navbar-nav">
-                        <li><a href="{{route('aboutroute')}}">About</a></li>
+                        @if (Auth::check())
+                        <li><a href="{{url('/home')}}">Your Dashboard</a></li>
+
+                         @if(Auth::user()->hasRole('admin'))
                         <li><a href="{{url('hosts')}}">Hosts</a></li>
                         <li><a href="{{url('addcategory')}}">Add Category</a></li>
                         <li><a href="{{url('adds')}}">All Adds</a></li>
+                        @endif
+                        @endif
                     </ul>
-                    @endif
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
