@@ -31,7 +31,13 @@ Route::get('/add/publish/{add}', [
 	'uses' => 'AddController@publish',
 	'as' => 'add.publish'
 ])->middleware('admin');
+
 Route::get('/add/unpublish/{add}', [
 	'uses' => 'AddController@unpublish',
 	'as' => 'add.unpublish'
+]);
+
+Route::get('/add/{add}', [
+	'uses' => 'FrontController@showadd',
+	'as' => 'showadd.view'
 ]);

@@ -569,7 +569,6 @@ html {
 
 #header .logo {
     font-family: 'font-proxima-bold';
-    display: inline-block;
     font-size: 2em;
     opacity: .95;
     color: #fff;
@@ -1261,3 +1260,9 @@ select:required:invalid {
 }
 .page-header {
     margin: 0;
+}
+.user-menu .dropdown-menu{
+    right:0;
+    left: auto;
+    margin: 12px 0 0;
+}

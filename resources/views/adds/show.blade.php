@@ -82,53 +82,30 @@
 </script>
 
 <main id="content" class="homepage">
-    <div class="page-header" id="headerContent">
+    <div class="page-header" id="headerContent" style="height:250px">
        <div class="parallax-bg" data-velocity=".5"></div>
         <div class="header-content">
-            <h1 class="title">Half the bills,<br>double the life</h1>
-            <h2 class="subtitle">Join our community today!</h2>
-            <div class="modal-wrapper">
-                <a href="{{url('/hosts/create')}}" class="btn-cta signup-modal">Sign up</a><span>It's free</span>
-            </div>
+            <h1 class="title">Add Details</h1>
         </div>
     </div>
-    <div class="contain-row">
+    <div class="container-fluid">
         <div class="page-content">
-            <h1 class="page-title">Latest Listings</h1>
 
-            
-            @foreach($adds->chunk(3) as $chunk)
             <div class="listings-grid">
-                @foreach($chunk as $add)
-                <div class="listing-block">
-                    <a href="{{route('showadd.view', $add->id)}}" class="listing-image">
-                        <img src="{{$add->image}}">
-                        <span class="listing-label label-new">New</span>
-                        <span class="listing-price">Tk. {{$add->price}}</span>
-                    </a>
-                    <div class="listing-visitors">
-                        <a href="#" class="visitor visitor-main"></a>
-                        <a href="#" class="visitor"></a>
-                        <a href="#" class="visitor"></a>
+                <div class="row">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <img src="{{asset($add->image)}}" alt="" class="img-responsive">
                     </div>
-                    <div class="listing-info">
-                        <a href="{{route('showadd.view', $add->id)}}">{{$add->host->address}}</a>
-                        <span>{{$add->host->city}}</span>
+                    <div class="col-sm-5">
+                        <div class="add-details" style="padding-left:20px;">
+                            <h1>{{$add->name}}</h1>
+                            <h2><b><mark>Price: {{$add->price}}</mark></b></h2>
+                            <p>{{$add->description}}</p>
+                            <h4><b>Address:</b> {{$add->host->address}}<br> {{$add->host->city}}-{{$add->host->zip}}, {{$add->host->state}}</h4>
+                            <h2><b>Contact: <a href="callto:{{$add->host->phone}}">{{$add->host->phone}}</a></b></h2>
+                        </div>
                     </div>
                 </div>
-                @endforeach
-                </div>
-            @endforeach
-            
-
-            <h1 class="page-title">Latest Users</h1>
-            <div class="listings-grid users">
-                @foreach($hosts as $host)
-                <a href="#" class="user-link">
-                    <span class="user-image"><img src="images/profiles/blank.png" alt="bob marley"></span>
-                    <span class="user-name">{{$host->name}}</span>
-                </a>
-                @endforeach
             </div>
         </div>
     </div>
@@ -158,14 +135,13 @@
         <div class="footer-block">
             <ul>
                 <li class="footer-block-title">Address</li>
-                <li>LICT, Chittagong<br>Bangladesh<br>4000</li>
+                <li>Somewhere<br>In Belgium<br>34593</li>
             </ul>
         </div>
         <div class="footer-block">
             <ul>
                 <li class="footer-block-title">Contact us</li>
-                <li>031 458398</li>
-                <li>info@to-let.com</li>
+                <li>LICT, Chittagong<br>Bangladesh<br>4000</li>
             </ul>
         </div>
     </div>
@@ -180,69 +156,5 @@
     </ul>
     <p class="copyright">&copy; All rights reserved by <b>GROUP-F</b> lict batch TUP-OFF-H-38</p>
 </footer>
-    <div id="signup-third" class="modal-box mfp-hide">
-    <div class="modal-header"><img src="css/images/logo.png" height="39" width="198" alt=""></div>
-    <div class="modal-content">
-
-        <object type="image/svg+xml" data="images/tick.svg">Your browser does not support SVG</object>
-
-        <h2 style="font-size: 2em; color: #009ee3">Complete your profile</h2>
-        <p style="font-size: 0.8em; color: #009ee3">You must <strong>verify</strong> your <strong>profile</strong> to connect with other members,<br/>
-            this protects our community from spammers.
-        </p>
-    </div>
-</div>
-<div id="signup-first" class="modal-box mfp-hide">
-    <div class="modal-header"><img src="css/images/logo.png" height="39" width="198" alt=""></div>
-    <div class="modal-content">
-        <a href="/fbauth" class="btn">Connect with <strong>facebook</strong></a>
-        <span>or</span>
-        <a href="{{url('/hosts/create')}}" class="btn btn-action"><strong>Register</strong> manually</a>
-    </div>
-</div>
-<div id="signup-second" class="modal-box mfp-hide">
-    <div class="modal-header"><img src="css/images/logo.png" height="39" width="198" alt=""></div>
-    <div class="modal-content register">
-        <div class="register-form">
-
-            <div id="registrationMessage"></div>
-
-            <div class="input-fields">
-                <h2>Tell us about you</h2>
-                <div class="input-box">
-
-                    <input type="text" id="firstname" name="firstname" class="form-input" placeholder="First Name" required />
-                    <input type="text" id="lastname" name="lastname" class="form-input" placeholder="Last Name" required />
-
-                </div>
-                <div class="input-box">
-
-                    <input type="number" min="1" max="12" id="dobMonth" name="dobMonth" class="form-input registerBoxThreeLeft" placeholder="Month" required />
-                    <input type="number" min="1" max="31" id="dobDay" name="dobDay" class="form-input registerBoxThreeMiddle" placeholder="Day" required />
-                    <input type="number" min="1900" max="1998" id="dobYear" name="dobYear" class="form-input registerBoxThreeRight" placeholder="Year" required />
-
-                </div>
-
-                <select id="gender" name="gender" required class="form-input registerGender">
-                    <option value="" default hidden selected>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <input type="email" id="email" name="email" class="form-input" placeholder="Email" required />
-
-            </div>
-            <button class="btn btn-action" id="btnRegistration">Register</button>
-
-    </div>
-        <div class="note">
-            <p>Your privacy matters ad it is 100% free to sign up.<br/>We never share your information without consent. <a href="#">Terms and Conditions.</a>
-            </p>
-        </div>
-</div>
-</div>
-
-    
 </body>
 </html>

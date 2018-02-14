@@ -24,9 +24,14 @@ class AddController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $adds = Add::all();
-        return view('adds.index', compact('adds'));
+    {   if(Auth::user()->hasRole('admin')){
+            $adds = Add::all();
+            return view('adds.index', compact('adds'));
+        }else{
+            $adds = Add::where('host_id', Auth::user()->user_type_id)->get();
+            return view('adds.index', compact('adds'));
+        }
+
     }
 
     /**

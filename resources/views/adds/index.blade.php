@@ -18,7 +18,9 @@
 								<td>Created By</td>
 								<td>Created at</td>
 								<td>Status</td>
+								@if(Auth::user()->hasRole("admin"))
 								<td>Action</td>
+								@endif
 							</tr>
 						</thead>
 						<tbody>
