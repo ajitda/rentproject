@@ -85,6 +85,7 @@
     <div class="page-header" id="headerContent">
        <div class="parallax-bg" data-velocity=".5"></div>
         <div class="header-content">
+            <p><b><mark>Admin Email: shaonmohajon@gmail.com & pass: secret</mark></b></p>
             <h1 class="title">Half the bills,<br>double the life</h1>
             <h2 class="subtitle">Join our community today!</h2>
             <div class="modal-wrapper">
@@ -173,12 +174,9 @@
         <li class="ico-facebook"><a href="#">facebook</a></li>
         <li class="ico-google-plus"><a href="#">google</a></li>
         <li class="ico-twitter"><a href="#">twitter</a></li>
-        <li class="ico-linkedin"><a href="#">linkedin</a></li>
-        <li class="ico-pinterest"><a href="#">pinterest</a></li>
-        <li class="ico-youtube"><a href="#">youtube</a></li>
         <li class="ico-instagram"><a href="#">instagram</a></li>
     </ul>
-    <p class="copyright">&copy; All rights reserved by <b>GROUP-F</b> lict batch TUP-OFF-H-38</p>
+    <p class="copyright">&copy; All rights reserved by <b>GROUP-G</b> lict batch TUP-OFF-H-38</p>
 </footer>
     <div id="signup-third" class="modal-box mfp-hide">
     <div class="modal-header"><img src="css/images/logo.png" height="39" width="198" alt=""></div>

@@ -135,13 +135,14 @@
         <div class="footer-block">
             <ul>
                 <li class="footer-block-title">Address</li>
-                <li>Somewhere<br>In Belgium<br>34593</li>
+                <li>LICT, Chittagong<br>Bangladesh<br>4000</li>
             </ul>
         </div>
         <div class="footer-block">
             <ul>
                 <li class="footer-block-title">Contact us</li>
-                <li>LICT, Chittagong<br>Bangladesh<br>4000</li>
+                <li>031-438953</li>
+                <li>info@to-let.com</li>
             </ul>
         </div>
     </div>
@@ -149,12 +150,9 @@
         <li class="ico-facebook"><a href="#">facebook</a></li>
         <li class="ico-google-plus"><a href="#">google</a></li>
         <li class="ico-twitter"><a href="#">twitter</a></li>
-        <li class="ico-linkedin"><a href="#">linkedin</a></li>
-        <li class="ico-pinterest"><a href="#">pinterest</a></li>
-        <li class="ico-youtube"><a href="#">youtube</a></li>
         <li class="ico-instagram"><a href="#">instagram</a></li>
     </ul>
-    <p class="copyright">&copy; All rights reserved by <b>GROUP-F</b> lict batch TUP-OFF-H-38</p>
+    <p class="copyright">&copy; All rights reserved by <b>GROUP-G</b> lict batch TUP-OFF-H-38</p>
 </footer>
 </body>
 </html>
