@@ -19,7 +19,9 @@ class CreateAddsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->boolean('type')->default(0);
-            $table->integer('price');   
+            $table->integer('price');
+            $table->double('lat', 20, 10);   
+            $table->double('lng', 20, 10);   
             $table->integer('host_id')->unsigned();
             $table->foreign('host_id')->references('id')->on('hosts');
 

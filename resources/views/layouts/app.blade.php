@@ -87,5 +87,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY></script>
+    @yield('scripts');
 </body>
 </html>

@@ -54,6 +54,19 @@
                                     </span>
                                 @endif
 							</div>
+							<div class="form-group">
+								<label for="searchMap">Location</label>
+								<input type="text" id="searchMap">
+								<div id="map-canvas"></div>
+							</div>
+							<div class="form-group">
+								<label for="lat">Latitute</label>
+								<input type="text" id="lat" class="form-control" name="lat">
+							</div>
+							<div class="form-group">
+								<label for="lng">Longitute</label>
+								<input type="text" id="lng" class="form-control" name="lng">
+							</div>
 							<div class="form-group {{ $errors->has('add_category_id') ? ' has-error' : '' }}">
 								<label for="add_category_id">phone</label>
 								<select name="add_category_id" id="add_category_id" class="form-control">
@@ -77,3 +90,13 @@
 		</div>
 	</div>
 @endsection
+
+	<script>
+		var map = new google.maps.Map(document.getElementById('map-canvas'),{
+			center:{
+				lat:27.72,
+				lng:85.36
+			},
+			zoom:15
+		});
+	</script>
